@@ -1,0 +1,39 @@
+<div class="container-fluid px-3 py-3">
+     <div class="row border-bottom">
+          <div class="col-12 col-md-12 text-center">
+               <h3>User's List</h3>
+          </div>
+     </div>
+     <div class="row mt-2">
+          <div class="col-12 col-md-12">
+               <div class="table-responsive">
+                    <ng-container *ngIf="userData">
+                         <table class="table ">
+                              <thead>
+                                   <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Phone</th>
+                                        <th>Username</th>
+                                        <th>University</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+                                   <tr *ngFor="let data of userData">
+                                        <td>{{ data.firstName }}</td>
+                                        <td>{{ data.lastName }}</td>
+                                        <td>{{ data.email }}</td>
+                                        <td> {{data.role}} </td>
+                                        <td> {{data.phone}} </td>
+                                        <td> {{data.username}} </td>
+                                        <td> {{data.university}} </td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </ng-container>
+               </div>
+          </div>
+     </div>
+</div>

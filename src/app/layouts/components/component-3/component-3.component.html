@@ -1,0 +1,72 @@
+<div class="container-fluid px-2 py-3">
+     <div class="row border-bottom mb-3">
+          <div class="col-12 text-center">
+               <h3>Auth Guards in Angular</h3>
+               <p class="text-muted">
+                    Auth Guards are used to control access to routes based on authentication,
+                    authorization, or application state.
+               </p>
+          </div>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🔐 What is an Auth Guard?</h5>
+          <p>
+               An Auth Guard is a service that decides whether a user
+               <strong>can navigate to a route or not</strong>.
+          </p>
+          <p class="text-muted">
+               Guards run before route activation and return
+               true, false, or a UrlTree.
+          </p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>✅ CanActivate Guard</h5>
+          <p>Used to protect a route from unauthorized access.</p>
+          <p class="text-muted">✔ Example: Allow only logged-in users</p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🔁 CanActivate with Redirect</h5>
+          <p>Redirect user to login if not authenticated.</p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🛡️ Role-Based Auth Guard</h5>
+          <p>Restricts routes based on user roles (Admin, User, etc.).</p>
+          <p class="text-muted">✔ Example: Admin-only pages</p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>⚠️ CanDeactivate Guard</h5>
+          <p>Prevents user from leaving a page with unsaved changes.</p>
+          <p class="text-muted">✔ Example: Forms, edit pages</p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>📦 CanLoad Guard</h5>
+          <p>Prevents loading of lazy-loaded modules if user is unauthorized.</p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🧭 Using Guards in Routes</h5>
+          <p>Protect routes by adding guard services in route configuration.</p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>⭐ Best Practices</h5>
+          <ul class="text-muted">
+               <li>Use guards only for routing logic</li>
+               <li>Never rely on frontend guards for security</li>
+               <li>Always validate permissions on backend</li>
+               <li>Use role-based guards for scalable apps</li>
+          </ul>
+     </div>
+
+     <div class="alert alert-success">
+          <strong>Interview One-Liner:</strong><br />
+          “Auth Guards in Angular protect routes by checking authentication,
+          roles, or unsaved changes before navigation.”
+     </div>
+</div>

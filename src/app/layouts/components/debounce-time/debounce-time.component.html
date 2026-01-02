@@ -1,0 +1,125 @@
+<div class="container-fluid px-2 py-3">
+     <div class="row border-bottom mb-3">
+          <div class="col-12 text-center">
+               <h3>RxJS Important Operators (Real-World Explanation)</h3>
+               <p class="text-muted">
+                    These operators are heavily used in real Angular applications and frequently asked in interviews.
+               </p>
+          </div>
+     </div>
+
+     <div class="col-6 col-md-6 mt-2">
+          <div class="mb-3">
+               <input type="text" class="form-control" [formControl]="searchControl" placeholder="Search products..." />
+          </div>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🔁 switchMap</h5>
+          <p>
+               Imagine a <strong>search box</strong>. Every time the user types, an API call is made.
+               If the user types again before the previous API finishes, we <strong>cancel the old request</strong>
+               and only care about the latest one.
+          </p>
+          <p class="text-muted">
+               That is exactly what <strong>switchMap</strong> does.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+          this.search$.pipe(
+          debounceTime(300),
+          switchMap(value =&gt; this.api.search(value))
+          )
+    </code></pre>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🔀 mergeMap</h5>
+          <p class="text-muted">
+               Runs multiple API calls in parallel without cancelling any.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+          from(userIds).pipe(
+          mergeMap(id =&gt; this.api.getUser(id))
+          )
+    </code></pre>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>⏳ debounceTime</h5>
+          <p class="text-muted">
+               Waits until the user stops typing before emitting.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+          input$.pipe(
+          debounceTime(500)
+          )
+    </code></pre>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>⚡ throttleTime</h5>
+          <p class="text-muted">
+               It use when I don't want the user to hit API repetedly.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+          click$.pipe(
+          throttleTime(1000)
+          )
+    </code></pre>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🔗 combineLatest</h5>
+          <p class="text-muted">
+               It use to merge the API + Local data.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+          combineLatest([
+          user$,
+          orders$
+          ])
+    </code></pre>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🍴 forkJoin</h5>
+          <p class="text-muted">
+               Waits for all APIs to complete and emits once.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+          forkJoin(&#123;
+          user: user$,
+          settings: settings$,
+          notifications: notify$
+          &#125;)
+    </code></pre>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🔄 retry</h5>
+          <p class="text-muted">
+               Automatically retries failed API calls.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+               api$.pipe(
+               retry(3)
+               )
+    </code></pre>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🛑 takeUntil</h5>
+          <p class="text-muted">
+               Automatically unsubscribes to prevent memory leaks.
+          </p>
+          <pre class="bg-light p-2 rounded"><code>
+          this.data$
+          .pipe(takeUntil(this.destroy$))
+          .subscribe();
+    </code></pre>
+     </div>
+
+     <div class="alert alert-primary">
+          <strong>Interview Golden Line:</strong><br />
+          RxJs is a JavaScript library that allow us to work with async data stream with the help of Observables.</div>
+</div>

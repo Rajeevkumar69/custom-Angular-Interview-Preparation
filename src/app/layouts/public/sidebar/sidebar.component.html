@@ -1,0 +1,16 @@
+<div class="d-flex">
+     <aside class="bg-dark text-white vh-100 p-3" style="width: 225px;">
+          <h5 class="mb-4 text-center border-bottom pb-2">
+               Angular Preperation 
+          </h5>
+
+          <ul class="nav nav-pills flex-column gap-2">
+               <li class="nav-item" *ngFor="let item of menuItems">
+                    <button class="btn btn-dark w-100 text-start" (click)="navigate(item.route)">
+                         <i [class]="item.icon + ' me-2'"></i>
+                         {{ item.label }}
+                    </button>
+               </li>
+          </ul>
+     </aside>
+</div>

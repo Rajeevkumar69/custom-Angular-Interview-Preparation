@@ -1,0 +1,142 @@
+<div class="container-fluid px-3 py-3">
+     <div class="row mb-3 border-bottom">
+          <div class="col-12 text-center">
+               <h3>Angular BehaviorSubject</h3>
+               <p class="text-muted">
+                    BehaviorSubject is a special type of Observable in RxJS that holds a current value and use to share
+                    the data between the components in Real time. It's
+                    same as <code>[(ngModel)]</code> two way data binding technique.
+               </p>
+          </div>
+     </div>
+
+     <div class="row mt-2">
+          <div class="col-12 col-md-12">
+               <pre>Example</pre>
+          </div>
+          <div class="col-12 col-md-12">
+               <div class="mb-3">
+                    <select class="form-select form-select-sm" (change)="OnRoleChange($event)">
+                         <option value="Admin">Admin</option>
+                         <option value="User">User</option>
+                    </select>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mt-2">
+          <div class="col-12 col-md-12">
+               <h3>Child Component</h3>
+               <app-child-component></app-child-component>
+          </div>
+     </div>
+
+     <div class="row mb-3">
+          <div class="col-12">
+               <div class="card mb-3 p-3">
+                    <h5>Overview</h5>
+                    <p>
+                         A BehaviorSubject in Angular is a special type of Observable that holds and multicasts a
+                         current value to its subscribers.
+                         It must be initialized with a default value and immediately emits its last emitted value to any
+                         new subscriber.
+                    </p>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mb-3">
+          <div class="col-12">
+               <div class="card mb-3 p-3">
+                    <h5>Key Characteristics</h5>
+                    <ul class="text-muted">
+                         <li><strong>Initial Value Required:</strong> Must be instantiated with an initial value, never
+                              undefined.</li>
+                         <li><strong>Emits Current Value Immediately:</strong> New subscribers instantly receive the
+                              latest value.</li>
+                         <li><strong>Multicast:</strong> Allows multiple observers to share the same data stream.</li>
+                         <li><strong>Access Current Value Directly:</strong> Use <code>.value</code> or
+                              <code>.getValue()</code> to get current value synchronously.
+                         </li>
+                         <li><strong>Hot Observable:</strong> Produces values as soon as created, regardless of
+                              subscribers.</li>
+                    </ul>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mb-3">
+          <div class="col-12">
+               <div class="card mb-3 p-3">
+                    <h5>Common Use Case</h5>
+                    <p>
+                         BehaviorSubject is commonly used for state management in Angular services, such as managing:
+                    </p>
+                    <ul class="text-muted">
+                         <li>Current user's login status</li>
+                         <li>Items in a shopping cart</li>
+                    </ul>
+                    <p>
+                         Any new component that subscribes immediately gets the current state.
+                    </p>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mb-3">
+          <div class="col-12">
+               <div class="card mb-3 p-3">
+                    <h5>BehaviorSubject vs Subject</h5>
+                    <div class="table-responsive">
+                         <table class="table table-bordered text-center">
+                              <thead>
+                                   <tr>
+                                        <th>Feature</th>
+                                        <th>BehaviorSubject</th>
+                                        <th>Subject</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+                                   <tr>
+                                        <td>Initial value</td>
+                                        <td>Yes, required</td>
+                                        <td>No initial value</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Value on subscription</td>
+                                        <td>New subscribers get the latest value immediately</td>
+                                        <td>Subscribers only get values emitted after subscription</td>
+                                   </tr>
+                                   <tr>
+                                        <td>Use case</td>
+                                        <td>Managing "value over time" or current state</td>
+                                        <td>Event emitters (e.g., button click notification)</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mb-3">
+          <div class="col-12">
+               <div class="card mb-3 p-3">
+                    <h5>Best Practice</h5>
+                    <p>
+                         Expose BehaviorSubjects as <strong>public Observable</strong> in services to prevent external
+                         components from calling <code>next()</code> directly.
+                         This ensures controlled data flow and prevents unexpected state changes.
+                    </p>
+               </div>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col-12">
+               <div class="alert alert-info">
+                    BehaviorSubject is powerful for managing shared state and reactive data in Angular applications.
+               </div>
+          </div>
+     </div>
+</div>

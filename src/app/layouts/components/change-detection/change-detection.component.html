@@ -1,0 +1,47 @@
+<div class="container-fluid px-2 py-3">
+     <div class="row border-bottom mb-3">
+          <div class="col-12 text-center ">
+               <h3>Change Detection in Angular</h3>
+               <p class="text-muted mb-2">
+                    Change Detection is how Angular knows when UI updated.
+               </p>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col-12 col-md-6 mb-3">
+               <div class="card p-3 h-100">
+                    <h5>⚙️ How Angular Does It</h5>
+
+                    <pre class="bg-light p-2 rounded mb-2">
+                    <code>{{ userList.length }}</code>
+                    </pre>
+
+                    <div class="col-2 col-md-2 text-center">
+                         <button (click)="clickButton($event)" type="button" class="btn btn-info">
+                              Button
+                         </button>
+                    </div>
+
+                    <p class="text-muted mb-2">
+                         When <code>userList</code> changes in the component, Angular detects the
+                         change and updates the DOM automatically.
+                    </p>
+
+                    <pre class="bg-light p-2 rounded">
+                    <code>this.userList = 20;</code>
+                    </pre>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mt-2">
+          <div class="col-12">
+               <div class="alert alert-info">
+                    <strong>Interview One-Liner:</strong>
+                    Change Detection is Angular’s mechanism to keep the UI in sync with data.
+                    It use to update the UI as soon data got updated, or interact with UI.
+               </div>
+          </div>
+     </div>
+</div>

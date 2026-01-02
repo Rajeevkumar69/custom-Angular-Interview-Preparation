@@ -1,0 +1,114 @@
+<div class="container-fluid px-2 py-3">
+     <div class="row border-bottom">
+          <div class="col-12 col-md-12">
+               <h3>Angular Signals</h3>
+          </div>
+     </div>
+     <div class="row mt-2">
+          <div class="col-12 col-md-12">
+               <pre>Example</pre>
+          </div>
+          <div class="col-12 col-md-12">
+               <pre>UserName:- <em> {{userName()}} </em></pre>
+
+               <pre>CityList:- <em> {{cityList()}} </em></pre>
+               
+               <pre>UserData:- <em> {{userData() | json}} </em></pre>
+          </div>
+     </div>
+     <div class="row mt-2">
+          <div class="col-12 col-md-12">
+               <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body">
+                         <h5 class="fw-semibold mb-3 text-dark">What are Angular Signals?</h5>
+                         <p class="text-secondary mb-0">
+                              Angular Signals are a new reactive state management mechanism introduced to simplify
+                              change detection and improve performance. Signals represent reactive values that
+                              automatically
+                              track dependencies and update the UI when their value changes, without relying on Zone.js
+                              or complex RxJS streams.
+                         </p>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col-12 col-md-12">
+               <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body">
+                         <h5 class="fw-semibold mb-3 text-dark">Why Angular Introduced Signals</h5>
+                         <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Simplifies state management compared to RxJS</li>
+                              <li class="list-group-item">Improves performance with fine-grained reactivity</li>
+                              <li class="list-group-item">Reduces unnecessary change detection cycles</li>
+                              <li class="list-group-item">Provides predictable and explicit data flow</li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="row g-4">
+          <div class="col-12 col-md-6">
+               <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                         <h5 class="fw-semibold text-success mb-3">Core Signal Types</h5>
+                         <ul class="list-group list-group-flush">
+                              <li class="list-group-item">
+                                   <strong>Signal</strong><br>
+                                   Holds a reactive value and notifies dependents when updated
+                              </li>
+                              <li class="list-group-item">
+                                   <strong>Computed</strong><br>
+                                   Derives values from other signals and recalculates automatically
+                              </li>
+                              <li class="list-group-item">
+                                   <strong>Effect</strong><br>
+                                   Runs side effects when dependent signal values change
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+               <div class="card shadow-sm h-100 border-0">
+                    <div class="card-body">
+                         <h5 class="fw-semibold text-info mb-3">Signals vs RxJS</h5>
+                         <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Signals are synchronous and simpler to read</li>
+                              <li class="list-group-item">RxJS is better suited for async streams and complex flows</li>
+                              <li class="list-group-item">Signals reduce boilerplate and subscription management</li>
+                              <li class="list-group-item">Both can coexist in the same Angular application</li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mt-4">
+          <div class="col-12">
+               <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                         <h5 class="fw-semibold text-dark mb-3">Common Use Cases</h5>
+                         <ul class="list-group list-group-flush">
+                              <li class="list-group-item">Component-level state management</li>
+                              <li class="list-group-item">Optimized UI updates for forms and dashboards</li>
+                              <li class="list-group-item">Replacing simple RxJS subscriptions</li>
+                              <li class="list-group-item">Improving performance in large applications</li>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mt-4">
+          <div class="col-12">
+               <div class="alert alert-primary shadow-sm">
+                    <strong>Interview Focus:</strong> Signals provide fine-grained reactivity,
+                    reduce dependency on Zone.js, and simplify state handling compared to RxJS.
+               </div>
+          </div>
+     </div>
+</div>

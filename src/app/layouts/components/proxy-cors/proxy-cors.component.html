@@ -1,0 +1,98 @@
+<div class="container-fluid px-2 py-3">
+     <div class="row border-bottom mb-3">
+          <div class="col-12 text-center">
+               <h3>Proxy & CORS in Angular</h3>
+               <p class="text-muted">
+                    Proxy configuration helps Angular apps avoid CORS issues during development.
+               </p>
+          </div>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🌐 What is an Angular Proxy?</h5>
+          <p>
+               An Angular proxy is a <strong>development-only configuration</strong> used with
+               <code>ng serve</code> to redirect API calls from the frontend to a backend server.
+          </p>
+          <p class="text-muted">
+               It allows Angular to call backend APIs without triggering browser CORS errors.
+          </p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🚫 Why CORS Error Happens</h5>
+          <p>
+               Browsers enforce the <strong>Same-Origin Policy</strong>.
+          </p>
+          <ul class="text-muted">
+               <li>Frontend: http://localhost:4200</li>
+               <li>Backend: http://localhost:8080</li>
+          </ul>
+          <p>
+               Since ports are different, the browser blocks the request.
+          </p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>🔁 How Proxy Works (Flow)</h5>
+          <ol class="text-muted">
+               <li>Angular app makes a request to <code>/api/users</code></li>
+               <li>Angular dev server intercepts the request</li>
+               <li>Proxy forwards it to <code>http://localhost:8080/api/users</code></li>
+               <li>Backend responds to the proxy</li>
+               <li>Proxy sends response back to Angular</li>
+          </ol>
+          <p>
+               The browser thinks it’s the <strong>same origin</strong>, so no CORS error occurs.
+          </p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>⚙️ Proxy Configuration</h5>
+          <p>Create a file named <code>proxy.conf.json</code></p>
+
+          <pre class="bg-light p-2 rounded"><code>
+               &#123;
+               "/api": &#123;
+               "target": "http://localhost:8080",
+               "secure": false,
+               "changeOrigin": true,
+               "logLevel": "debug"
+               &#125;
+               &#125;
+          </code></pre>
+
+          <p class="text-muted mt-2">
+               Any request starting with <code>/api</code> will be redirected to the backend.
+          </p>
+     </div>
+
+     <div class="card mb-3 p-3">
+          <h5>▶️ How to Use Proxy</h5>
+          <p>Add this to your <code>angular.json</code> or start command:</p>
+
+          <pre class="bg-light p-2 rounded"><code>
+               ng serve --proxy-config proxy.conf.json
+          </code></pre>
+
+          <p class="text-muted">
+               Now use relative URLs in your Angular services:
+          </p>
+
+          <pre class="bg-light p-2 rounded"><code>
+               this.http.get("/api/users")
+          </code></pre>
+     </div>
+
+     <div class="alert alert-warning">
+          <strong>Important:</strong>
+          Proxy works <u>only in development</u>.
+          In production, CORS must be handled by the backend or web server (Nginx, Apache).
+     </div>
+
+     <div class="alert alert-success">
+          <strong>Interview One-Liner:</strong><br />
+          “Angular proxy is a development-only solution that avoids CORS by routing API
+          requests through the Angular dev server.”
+     </div>
+</div>

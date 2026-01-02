@@ -1,0 +1,80 @@
+<div class="container-fluid px-3 py-3">
+     <div class="row mb-3 border-bottom">
+          <div class="col-12 text-center">
+               <h3>Angular Lifecycle Hooks</h3>
+               <p class="text-muted">
+                    Angular lifecycle hooks allow developers to tap into component events.
+               </p>
+          </div>
+     </div>
+     <div #elemId></div>
+
+     <div class="row mt-2">
+          <div class="col-6 col-md-6">
+               <div class="mb-3">
+                    <input type="text" class="form-control" #searchField [value]="searchText"
+                         placeholder="Search...." />
+               </div>
+          </div>
+          <div class="col-6 col-md-6">
+               <div class="mb-3">
+                    <button (click)="getData()" type="button" class="btn btn-warning">
+                         Click Me!
+                    </button>
+               </div>
+          </div>
+     </div>
+
+     <div class="row mt-2">
+          <div class="col-12">
+               <code>{{name}}</code>
+          </div>
+     </div>
+
+     <div class="row mb-3 mt-3">
+          <div class="col-12">
+               <div class="card mb-3 p-3">
+                    <h5>ngOnChanges</h5>
+                    <p>Called when an input property changes.</p>
+               </div>
+               <div class="card mb-3 p-3">
+                    <h5>ngOnInit</h5>
+                    <p>Called once after the component is initialized.</p>
+               </div>
+               <div class="card mb-3 p-3">
+                    <h5>ngDoCheck</h5>
+                    <p>Called during every change detection run.</p>
+               </div>
+               <div class="card mb-3 p-3">
+                    <h5>ngAfterContentInit</h5>
+                    <p>Called once after content (ng-content) is projected into the component.</p>
+               </div>
+               <div class="card mb-3 p-3">
+                    <h5>ngAfterContentChecked</h5>
+                    <p>Called after every check of projected content.</p>
+               </div>
+               <div class="card mb-3 p-3">
+                    <h5>ngAfterViewInit</h5>
+                    <p>Called once after the component's view and child views are initialized.</p>
+               </div>
+               <div class="card mb-3 p-3">
+                    <h5>ngAfterViewChecked</h5>
+                    <p>Called after every check of the component's view and child views.</p>
+               </div>
+               <div class="card mb-3 p-3">
+                    <h5>ngOnDestroy</h5>
+                    <p>Called just before Angular destroys the component. Used for cleanup like unsubscribing from
+                         observables.</p>
+               </div>
+          </div>
+     </div>
+
+     <div class="row">
+          <div class="col-12">
+               <div class="alert alert-info">
+                    Angular lifecycle hooks allow you to control your component’s creation, updates, and destruction
+                    process.
+               </div>
+          </div>
+     </div>
+</div>

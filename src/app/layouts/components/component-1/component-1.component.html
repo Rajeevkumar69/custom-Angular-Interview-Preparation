@@ -1,0 +1,74 @@
+<div class="container-fluid px-3 py-3">
+     <div class="row border-bottom">
+          <div class="col-12 col-md-12">
+               <h3 class="text-center">User's Form</h3>
+          </div>
+     </div>
+
+     <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+          <div class="row mt-3">
+               <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                         <label for="" class="form-label required">First Name</label>
+                         <input type="text" class="form-control" (blur)="displaySingleFormError(userForm)"
+                              placeholder="Enter First Name" formControlName="firstname" />
+                         <code *ngIf="formErrors.firstname"> {{formErrors.firstname}}</code>
+                    </div>
+
+               </div>
+               <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                         <label for="" class="form-label required">Last Name</label>
+                         <input type="text" class="form-control" (blur)="displaySingleFormError(userForm)"
+                              placeholder="Enter Last Name" form formControlName="lastname" />
+                         <code *ngIf="formErrors.lastname"> {{formErrors.lastname}}</code>
+                    </div>
+               </div>
+          </div>
+          <div class="row">
+               <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                         <label for="" class="form-label required">Email</label>
+                         <input type="email" class="form-control" (blur)="displaySingleFormError(userForm)"
+                              placeholder="Enter Email" formControlName="email" />
+                         <code *ngIf="formErrors.email"> {{formErrors.email}} </code>
+                    </div>
+
+               </div>
+               <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                         <label for="" class="form-label required">Role</label>
+                         <input type="text" class="form-control" (blur)="displaySingleFormError(userForm)"
+                              placeholder="Enter Role" formControlName="role" />
+                         <code  *ngIf="formErrors.role">{{formErrors.role}}</code>
+                    </div>
+               </div>
+          </div>
+          <div class="row">
+               <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                         <label for="" class="form-label required">Phone</label>
+                         <input type="text" class="form-control" (blur)="displaySingleFormError(userForm)"
+                              placeholder="Enter Phone" formControlName="phone" />
+                         <code *ngIf="formErrors.phone"> {{formErrors.phone}} </code>
+                    </div>
+
+               </div>
+               <div class="col-12 col-md-6">
+                    <div class="mb-3">
+                         <label for="" class="form-label required">University</label>
+                         <input type="text" class="form-control" (blur)="displaySingleFormError(userForm)"
+                              placeholder="Enter University" formControlName="university" />
+                         <code  *ngIf="formErrors.university">{{formErrors.university}}</code>
+                    </div>
+               </div>
+          </div>
+          <div class="row mt-2">
+               <div class="col-12 col-md-12 text-center ">
+                    <button type="submit" mat-raised-button>
+                         Submit
+                    </button>
+               </div>
+          </div>
+     </form>
+</div>

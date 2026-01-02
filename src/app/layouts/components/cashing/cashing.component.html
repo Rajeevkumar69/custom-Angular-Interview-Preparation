@@ -1,0 +1,101 @@
+<div class="container-fluid px-2 py-3">
+     <div class="row border-bottom">
+          <div class="col-12 col-md-12 text-center">
+               <h3>Angular Cashing</h3>
+          </div>
+     </div>
+     <div class="row mt-2">
+          <div class="col-6 col-md-6">
+               <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Search User" [(ngModel)]="userId" />
+               </div>
+          </div>
+          <div class="col-6 col-md-6 mb-3">
+               <button (click)="getUserData()" type="button" class="btn btn-info btn-sm">
+                    Click Me!
+               </button>
+          </div>
+     </div>
+     <div class="row">
+        <div class="col-12 col-md-12">
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <h5 class="fw-semibold mb-3 text-dark">What is Caching?</h5>
+                    <p class="mb-0 text-secondary">
+                        Caching is a performance optimization technique where previously fetched or computed data
+                        is temporarily stored and reused instead of requesting it again. In Angular applications,
+                        caching reduces API calls, improves response time, lowers server load, and enhances user experience,
+                        especially in data-driven and large-scale applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <h5 class="fw-semibold mb-3 text-dark">Angular Caching Types</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Build-Time Caching using Angular CLI to speed up rebuilds</li>
+                        <li class="list-group-item">Runtime Caching to reuse data during application execution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-body">
+                    <h5 class="fw-semibold text-success mb-3">Runtime Caching (Client-Side)</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>HTTP Interceptors</strong><br>
+                            Intercepts HTTP requests and responses, stores GET responses in memory,
+                            serves cached data for repeated calls, and clears cache on data mutation requests.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>RxJS shareReplay</strong><br>
+                            Shares a single HTTP response across multiple subscribers and prevents duplicate API calls.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Browser Storage</strong><br>
+                            Stores configuration data, preferences, or session-based values using localStorage or IndexedDB.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-body">
+                    <h5 class="fw-semibold text-info mb-3">Advanced Angular Caching</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Service Workers (PWA)</strong><br>
+                            Acts as a network layer, caches assets and API responses,
+                            enables offline access and faster load times.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>SSR Transfer Cache</strong><br>
+                            Reuses server-side HTTP responses on the client to avoid duplicate API calls during hydration.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="alert alert-primary shadow-sm">
+                <strong>Interview Focus:</strong> Angular caching improves performance by minimizing redundant HTTP calls.
+                HTTP Interceptors and RxJS are most commonly discussed in interviews.
+            </div>
+        </div>
+    </div>
+</div>

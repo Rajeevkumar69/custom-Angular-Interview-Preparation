@@ -1,0 +1,21 @@
+html,
+body {
+     height: 100%;
+}
+
+body {
+     margin: 0;
+     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*{
+     scrollbar-width: thin !important;
+}
+
+
+.required::after{
+     content: ' *';
+     color: #f72727f6;
+}
