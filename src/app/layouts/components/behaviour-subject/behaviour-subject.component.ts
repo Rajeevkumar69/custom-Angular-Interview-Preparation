@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ApiService } from '../../../shared/services/api.service';
 
@@ -8,7 +8,7 @@ import { ApiService } from '../../../shared/services/api.service';
      templateUrl: './behaviour-subject.component.html',
      styleUrl: './behaviour-subject.component.scss'
 })
-export class BehaviourSubjectComponent implements OnInit {
+export class BehaviourSubjectComponent implements OnInit, OnDestroy {
      public userName$ = new Subject<string>();
      public childComUserData: any = {};
 
@@ -42,6 +42,10 @@ export class BehaviourSubjectComponent implements OnInit {
 
      public OnRoleChange(event: any) {
           this.apiService.$userRole.next(event.target?.value);
+     }
+
+     ngOnDestroy() {
+          this.apiService.clearChildFormData();
      }
 
 }

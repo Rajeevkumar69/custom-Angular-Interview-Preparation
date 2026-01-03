@@ -41,4 +41,8 @@ export class ApiService {
      public setChildFormData(data: any) {
           this.childFormDataSubject.next(data);
      }
+
+     public clearChildFormData() {
+          this.childFormDataSubject.next({});
+     }
 }
