@@ -1,21 +1,84 @@
 <div class="container-fluid px-2 py-3">
      <div class="row border-bottom">
-          <div class="col-12 col-md-12">
+          <div class="col-12 col-md-12 text-center">
                <h3>Angular Signals</h3>
           </div>
      </div>
      <div class="row mt-2">
-          <div class="col-12 col-md-12">
-               <pre>Example</pre>
+          <div class="col-12 col-md-12 text-center">
+               <p>Example</p>
           </div>
           <div class="col-12 col-md-12">
                <pre>UserName:- <em> {{userName()}} </em></pre>
 
                <pre>CityList:- <em> {{cityList()}} </em></pre>
-               
+
                <pre>UserData:- <em> {{userData() | json}} </em></pre>
           </div>
      </div>
+
+     <div class="row mt-2">
+          <div class="col-12 col-md-12 text-center border-top border-bottom">
+               <strong class="pt-1">Signal (Real time data change)</strong>
+               <pre>Employee Details Form</pre>
+          </div>
+          <div class="col-12 col-md-12">
+               <pre>EmployeeData:- <em> {{employeeData() | json }} </em> </pre>
+          </div>
+          <div class="col-3 col-md-3">
+               <div class="mb-3">
+                    <code class="form-label">Emp Id</code>
+                    <input type="text" (input)="changeEmpFormValue($event, 'empId')" maxlength="3" class="form-control"
+                         placeholder="Emp ID" />
+               </div>
+          </div>
+          <div class="col-3 col-md-3">
+               <div class="mb-3">
+                    <code class="form-label">Emp Name</code>
+                    <input type="text" class="form-control" (input)="changeEmpFormValue($event, 'empName')"
+                         maxlength="30" placeholder="Emp Name" />
+               </div>
+          </div>
+          <div class="col-3 col-md-3">
+               <div class="mb-3">
+                    <code class="form-label">Emp City</code>
+                    <input type="text" class="form-control" (input)="changeEmpFormValue($event, 'empCity')"
+                         placeholder="Emp City" />
+               </div>
+          </div>
+          <div class="col-3 col-md-3">
+               <div class="mb-3">
+                    <code class="form-label">Emp PinCode</code>
+                    <input type="text" class="form-control" (input)="changeEmpFormValue($event, 'empPinCode')"
+                         maxlength="6" placeholder="Emp PinCode" />
+               </div>
+          </div>
+     </div>
+
+     <div class="row mt-2">
+          <div class="col-12 col-md-12 text-center border-top border-bottom">
+               <strong class="pt-1">Computed Signal</strong>
+               <pre>User Details Form</pre>
+          </div>
+          <div class="col-12 col-md-12 pt-1">
+               <pre>Employee full Name:- <em> {{fullName()}} </em> </pre>
+          </div>
+          <div class="col-3 col-md-3">
+               <div class="mb-3">
+                    <code class="form-label">Fst Name</code>
+                    <input type="text" (input)="computedUserName($event, 'fstName')" maxlength="20" class="form-control"
+                         placeholder="Fst Name" />
+               </div>
+          </div>
+          <div class="col-3 col-md-3">
+               <div class="mb-3">
+                    <code class="form-label">Lst Name</code>
+                    <input type="text" class="form-control" (input)="computedUserName($event, 'lstName')" maxlength="30"
+                         placeholder="Lst Name" />
+               </div>
+          </div>
+     </div>
+
      <div class="row mt-2">
           <div class="col-12 col-md-12">
                <div class="card shadow-sm border-0 mb-4">
