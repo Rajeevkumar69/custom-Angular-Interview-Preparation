@@ -12,6 +12,9 @@ export class ApiService {
      $userRole = new BehaviorSubject<string>('');
      private userDetails = new Map<number, Observable<any>>();
 
+     private childFormDataSubject = new BehaviorSubject<any>({});
+     childFormData$ = this.childFormDataSubject.asObservable();
+
      constructor(
           private _httpClient: HttpClient
      ) { }
@@ -35,4 +38,7 @@ export class ApiService {
           return this.userDetails.get(id);
      }
 
+     public setChildFormData(data: any) {
+          this.childFormDataSubject.next(data);
+     }
 }

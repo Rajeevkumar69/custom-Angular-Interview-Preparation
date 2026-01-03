@@ -10,10 +10,11 @@ import { ApiService } from '../../../shared/services/api.service';
 })
 export class BehaviourSubjectComponent implements OnInit {
      public userName$ = new Subject<string>();
+     public childComUserData: any = {};
 
      constructor(
-          private apiService:ApiService
-     ) { 
+          private apiService: ApiService
+     ) {
           setTimeout(() => {
                this.userName$.next("Rajeev Kumar");
           }, 3000);
@@ -22,21 +23,25 @@ export class BehaviourSubjectComponent implements OnInit {
      }
 
      ngOnInit(): void {
-          this.userName$.subscribe((res:any)=>{
+          this.userName$.subscribe((res: any) => {
                console.log(res);
           })
 
-          this.apiService.$courseDuration.subscribe((res:any)=>{
+          this.apiService.$courseDuration.subscribe((res: any) => {
                console.log(res);
           })
 
-          this.apiService.$userRole.subscribe((res:any)=>{
+          this.apiService.$userRole.subscribe((res: any) => {
                console.log(res);
           })
+
+          this.apiService.childFormData$.subscribe(data => {
+               this.childComUserData = { ...this.childComUserData, ...data };
+          });
      }
 
-     public OnRoleChange(event:any){
-         this.apiService.$userRole.next(event.target?.value);
+     public OnRoleChange(event: any) {
+          this.apiService.$userRole.next(event.target?.value);
      }
 
 }

@@ -1,1 +1,16 @@
-<p>child-component works!</p>
+<div class="container-fluid py-3 px-2">
+     <div class="row mt-2">
+          <div class="col-6 col-md-6">
+               <div class="mb-3">
+                    <code for="" class="form-label">Name</code>
+                    <input type="text" class="form-control" (input)="changeFormValue($event)" placeholder="Enter Name" />
+               </div>
+          </div>
+          <div class="col-6 col-md-6">
+               <div class="mb-3">
+                    <code for="" class="form-label">Email</code>
+                    <input type="email" class="form-control" (input)="changeFormValue($event)" placeholder="Enter Email" />
+               </div>
+          </div>
+     </div>
+</div>
