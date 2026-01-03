@@ -56,19 +56,24 @@ export class SidebarComponent implements OnInit {
                icon: 'bi-arrow-repeat'
           },
           {
-               label:'Cashing Data',
-               route:'/cashing',
-               icon:'bi bi-fonts'
+               label: 'Cashing Data',
+               route: '/cashing',
+               icon: 'bi bi-fonts'
           },
           {
-               label:'Angular Signals',
-               route:'/signals',
-               icon:'bi bi-app-indicator'
+               label: 'Angular Signals',
+               route: '/signals',
+               icon: 'bi bi-app-indicator'
           },
           {
-               label:'Angular Directives',
-               route:'/directives',
-               icon:'bi bi-bounding-box'
+               label: 'Angular Directives',
+               route: '/directives',
+               icon: 'bi bi-bounding-box'
+          },
+          {
+               label: 'Angular Pipes',
+               route: '/pipes',
+               icon: 'bi bi-toggle-on'
           }
 
      ];

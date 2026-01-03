@@ -14,6 +14,7 @@ import { BehaviourSubjectComponent } from './components/behaviour-subject/behavi
 import { CashingComponent } from './components/cashing/cashing.component';
 import { SignalsComponent } from './components/signals/signals.component';
 import { DirectiveComponentComponent } from './components/directive-component/directive-component.component';
+import { PipeComponentComponent } from './components/pipe-component/pipe-component.component';
 const routes: Routes = [
      {
           path: '',
@@ -72,6 +73,10 @@ const routes: Routes = [
                {
                     path:'directives',
                     component:DirectiveComponentComponent
+               },
+               {
+                    path:'pipes',
+                    component:PipeComponentComponent
                }
           ]
      }
