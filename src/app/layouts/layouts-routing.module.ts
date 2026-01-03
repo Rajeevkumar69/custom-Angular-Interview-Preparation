@@ -13,6 +13,7 @@ import { LifecycleHooksComponent } from './components/lifecycle-hooks/lifecycle-
 import { BehaviourSubjectComponent } from './components/behaviour-subject/behaviour-subject.component';
 import { CashingComponent } from './components/cashing/cashing.component';
 import { SignalsComponent } from './components/signals/signals.component';
+import { DirectiveComponentComponent } from './components/directive-component/directive-component.component';
 const routes: Routes = [
      {
           path: '',
@@ -67,6 +68,10 @@ const routes: Routes = [
                {
                     path:'signals',
                     component:SignalsComponent
+               },
+               {
+                    path:'directives',
+                    component:DirectiveComponentComponent
                }
           ]
      }

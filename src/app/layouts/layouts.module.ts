@@ -18,6 +18,8 @@ import { BehaviourSubjectComponent } from './components/behaviour-subject/behavi
 import { ChildComponentComponent } from './components/child-component/child-component.component';
 import { CashingComponent } from './components/cashing/cashing.component';
 import { SignalsComponent } from './components/signals/signals.component';
+import { DirectiveComponentComponent } from './components/directive-component/directive-component.component';
+import { ChangeBgColorDirective } from '../shared/directives/common.directive';
 
 @NgModule({
      imports: [
@@ -26,7 +28,8 @@ import { SignalsComponent } from './components/signals/signals.component';
           ReactiveFormsModule,
           LayoutsRoutingModule,
           HttpClientModule,
-          MatButtonModule
+          MatButtonModule,
+          ChangeBgColorDirective
      ],
      declarations: [
           LayoutsComponent,
@@ -43,6 +46,7 @@ import { SignalsComponent } from './components/signals/signals.component';
           ChildComponentComponent,
           CashingComponent,
           SignalsComponent,
+          DirectiveComponentComponent,
      ],
      providers: [],
 })

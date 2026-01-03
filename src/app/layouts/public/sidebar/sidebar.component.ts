@@ -64,6 +64,11 @@ export class SidebarComponent implements OnInit {
                label:'Angular Signals',
                route:'/signals',
                icon:'bi bi-app-indicator'
+          },
+          {
+               label:'Angular Directives',
+               route:'/directives',
+               icon:'bi bi-bounding-box'
           }
 
      ];
