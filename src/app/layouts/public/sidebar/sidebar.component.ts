@@ -74,6 +74,11 @@ export class SidebarComponent implements OnInit {
                label: 'Angular Pipes',
                route: '/pipes',
                icon: 'bi bi-toggle-on'
+          },
+          {
+               label: 'Observable',
+               route: '/observable',
+               icon: 'bi bi-plugin'
           }
 
      ];

@@ -7,19 +7,16 @@
 
      <div class="row mt-2">
           <div class="col-12 col-md-12">
-               <p class="text-muted">View encapsulation in Angular is a mechanism that controls how the CSS styles
-                    defined within a
-                    component are applied to the DOM, ensuring that a component's styles are scoped and isolated from
-                    the rest of the application. This prevents style conflicts and promotes modular, reusable
-                    components. </p>
+               <p class="text-muted"><em>View encapsulation</em> in Angular that controls how the CSS styles
+                    are applied to the DOM. This prevents style conflicts and reusable components. 
+               </p>
           </div>
           <div class="col-12 col-md-12">
                <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                          <strong>Emulated (Default)</strong>
                          <p class="mb-0 text-muted">
-                              Styles are scoped to the component and do not leak outside, but the DOM is
-                              not truly isolated.
+                              It's component scoped & don't effect the styles globally. In Angular bydefault encapsulation are <em>Emulated</em>.
                          </p>
                     </li>
 
@@ -34,8 +31,7 @@
                     <li class="list-group-item">
                          <strong>None</strong>
                          <p class="mb-0 text-muted">
-                              No encapsulation is applied. Styles behave as global styles and may affect
-                              other components.
+                              It prevent the no encapsulation are applied & it affect the Styles globally.
                          </p>
                     </li>
                </ul>

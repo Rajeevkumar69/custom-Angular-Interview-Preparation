@@ -15,6 +15,7 @@ import { CashingComponent } from './components/cashing/cashing.component';
 import { SignalsComponent } from './components/signals/signals.component';
 import { DirectiveComponentComponent } from './components/directive-component/directive-component.component';
 import { PipeComponentComponent } from './components/pipe-component/pipe-component.component';
+import { ObservableComponent } from '../observable/observable.component';
 const routes: Routes = [
      {
           path: '',
@@ -39,44 +40,48 @@ const routes: Routes = [
                     // canActivate:[UserLoggedInGuard]
                },
                {
-                    path:'view-encapsulation',
-                    component:ViewEncapsulationComponent
+                    path: 'view-encapsulation',
+                    component: ViewEncapsulationComponent
                },
                {
-                    path:'change-detection',
-                    component:ChangeDetectionComponent
+                    path: 'change-detection',
+                    component: ChangeDetectionComponent
                },
                {
-                    path:'rxjs-example',
-                    component:DebounceTimeComponent
+                    path: 'rxjs-example',
+                    component: DebounceTimeComponent
                },
                {
-                    path:'proxy-cors',
-                    component:ProxyCORSComponent
+                    path: 'proxy-cors',
+                    component: ProxyCORSComponent
                },
                {
-                    path:'lifecycle-hooks',
-                    component:LifecycleHooksComponent
+                    path: 'lifecycle-hooks',
+                    component: LifecycleHooksComponent
                },
                {
-                    path:'behaviour-subject',
-                    component:BehaviourSubjectComponent
+                    path: 'behaviour-subject',
+                    component: BehaviourSubjectComponent
                },
                {
-                    path:'cashing',
-                    component:CashingComponent
+                    path: 'cashing',
+                    component: CashingComponent
                },
                {
-                    path:'signals',
-                    component:SignalsComponent
+                    path: 'signals',
+                    component: SignalsComponent
                },
                {
-                    path:'directives',
-                    component:DirectiveComponentComponent
+                    path: 'directives',
+                    component: DirectiveComponentComponent
                },
                {
-                    path:'pipes',
-                    component:PipeComponentComponent
+                    path: 'pipes',
+                    component: PipeComponentComponent
+               },
+               {
+                    path: 'observable',
+                    component: ObservableComponent
                }
           ]
      }
