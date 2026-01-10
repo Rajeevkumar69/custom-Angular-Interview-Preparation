@@ -18,7 +18,7 @@ export class CashingComponent implements OnInit {
 
      }
 
-     public getUserData(): void {
+     public getUserData() {
           if (!this.userId) {
                console.log('UserId is required');
                return;
