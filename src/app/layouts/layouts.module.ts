@@ -22,7 +22,7 @@ import { DirectiveComponentComponent } from './components/directive-component/di
 import { ChangeBgColorDirective } from '../shared/directives/common.directive';
 import { PipeComponentComponent } from './components/pipe-component/pipe-component.component';
 import { UpperCasePipe } from '../shared/pipes/uppercase.pipe';
-import { ObservableComponent } from '../observable/observable.component';
+import { ObservableComponent } from './components/observable/observable.component';
 
 @NgModule({
      imports: [

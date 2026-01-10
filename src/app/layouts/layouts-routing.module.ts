@@ -15,7 +15,8 @@ import { CashingComponent } from './components/cashing/cashing.component';
 import { SignalsComponent } from './components/signals/signals.component';
 import { DirectiveComponentComponent } from './components/directive-component/directive-component.component';
 import { PipeComponentComponent } from './components/pipe-component/pipe-component.component';
-import { ObservableComponent } from '../observable/observable.component';
+import { ObservableComponent } from './components/observable/observable.component';
+
 const routes: Routes = [
      {
           path: '',
