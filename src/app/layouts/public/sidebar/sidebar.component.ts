@@ -90,11 +90,11 @@ export class SidebarComponent implements OnInit {
 
      }
 
-     navigate(route: string): void {
+     public navigate(route: string): void {
           this.router.navigate([route]);
      }
 
-     isActive(route: string): boolean {
+     public isActive(route: string): boolean {
           return this.router.url === route;
      }
 

@@ -1,14 +1,17 @@
 <div class="d-flex">
      <aside class="bg-dark text-white vh-100 p-3" style="width: 225px;">
-          <h5 class="mb-4 text-center border-bottom pb-2">
-               Angular Preperation 
-          </h5>
+          <h6 class="mb-4 text-center border-bottom pb-2 text-uppercase">
+               Angular Preparation
+          </h6>
 
-          <ul class="nav nav-pills flex-column gap-2">
+          <ul class="nav flex-column gap-1">
                <li class="nav-item" *ngFor="let item of menuItems">
-                    <button class="btn btn-dark w-100 text-start" (click)="navigate(item.route)">
-                         <i [class]="item.icon + ' me-2'"></i>
-                         {{ item.label }}
+                    <button class="btn w-100 text-start d-flex align-items-center gap-2" [ngClass]="{
+            'btn-primary': isActive(item.route),
+            'btn-dark': !isActive(item.route)
+          }" (click)="navigate(item.route)">
+                         <i [class]="item.icon"></i>
+                         <span class="fs-13">{{ item.label }}</span>
                     </button>
                </li>
           </ul>
