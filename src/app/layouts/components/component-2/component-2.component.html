@@ -5,9 +5,21 @@
           </div>
      </div>
      <div class="row mt-2">
+          <div class="col-5 col-md-5 align-item-start">
+               <div class="mb-3 d-flex gap-2">
+                    <input type="text" class="form-control" placeholder="Search..."  [(ngModel)]="searchText" />
+                    <!-- if using switchMap use [formControl]="searchControl" instead ngModel & no need button-->
+                    <button type="button" class="btn btn-primary" (click)="searchUser()">
+                         Search
+                    </button>
+               </div>
+
+          </div>
+     </div>
+     <div class="row mt-2">
           <div class="col-12 col-md-12">
                <div class="table-responsive">
-                    <ng-container *ngIf="userData">
+                    <ng-container *ngIf="filteredData">
                          <table class="table ">
                               <thead>
                                    <tr>
@@ -21,7 +33,7 @@
                                    </tr>
                               </thead>
                               <tbody>
-                                   <tr *ngFor="let data of userData">
+                                   <tr *ngFor="let data of filteredData">
                                         <td>{{ data.firstName }}</td>
                                         <td>{{ data.lastName }}</td>
                                         <td>{{ data.email }}</td>
