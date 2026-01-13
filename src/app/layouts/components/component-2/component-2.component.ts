@@ -14,15 +14,17 @@ export class Component2Component implements OnInit {
      public filteredData: User[] = [];
      public originalUserData: User[] = [];
      public searchText: string = '';
-     // if using switchMap
-     public searchControl: FormControl = new FormControl('');
+     
+     public searchControl: FormControl = new FormControl(''); // if using switchMap
 
-     constructor(private apiService: ApiService) { }
+     constructor(
+          private apiService: ApiService
+     ) { }
 
      ngOnInit(): void {
           this.getUserData();
-          // if using switchMap
-          // this.searchUsingRxJs();
+          
+          // this.searchUsingRxJs(); // if using switchMap
      }
 
      public getUserData() {
@@ -30,7 +32,7 @@ export class Component2Component implements OnInit {
                next: ((res: any) => {
                     if (res) {
                          this.originalUserData = res?.users || [];
-                         this.filteredData = [...this.originalUserData];
+                         this.filteredData = JSON.parse(JSON.stringify(this.originalUserData));
                     }
                }),
                error: ((err: any) => {
@@ -42,9 +44,9 @@ export class Component2Component implements OnInit {
      public searchUser() {
           const searchData = this.searchText.toLowerCase();
           this.filteredData = this.originalUserData.filter(user =>
-               user.firstName.toLocaleLowerCase().includes(searchData) ||
-               user.lastName.toLocaleLowerCase().includes(searchData) ||
-               user.role.toLocaleLowerCase().includes(searchData) ||
+               user.firstName.toLowerCase().includes(searchData) ||
+               user.lastName.toLowerCase().includes(searchData) ||
+               user.role.toLowerCase().includes(searchData) ||
                user.username.toLowerCase().includes(searchData)
           )
      }
@@ -80,16 +82,16 @@ export class Component2Component implements OnInit {
 // - Keep original data safe
 // - On button click or input change:
 //    – convert searchText to lowercase
-//    – filter originalUserData
-// - Assign result to filteredData
+//    – filter originalUserData & assign data to the filteredUserData
 // - Never modify originalUserData
 
 
 // SEARCH USING FormControl + RxJS (Reactive)
 // - Import ReactiveFormsModule
-// - Create FormControl for search input
-// - Subscribe to valueChanges
-// - Use debounceTime for performance
+// - Create FormControl for search input  [formControl]="searchForm"
+// - Declare this formcontrol in ts -> public searchForm:formControl = new formControl(')
+// - Get valueChanges on formcontrol
+// - Use Pipe debounceTime for performance
 // - Use switchMap when search depends on API / async flow
 // - Filter from originalUserData or call API
 // - Assign result to filteredData
